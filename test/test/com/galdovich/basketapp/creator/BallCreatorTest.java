@@ -1,8 +1,8 @@
 package test.com.galdovich.day2.creator;
 
-import com.galdovich.day2.creator.BallCreator;
-import com.galdovich.day2.entity.Ball;
-import com.galdovich.day2.exception.CustomException;
+import com.galdovich.basketapp.creator.BallCreator;
+import com.galdovich.basketapp.entity.Ball;
+import com.galdovich.basketapp.exception.CustomException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.List;

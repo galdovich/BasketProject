@@ -1,9 +1,9 @@
 package test.com.galdovich.day2.entity;
 
-import com.galdovich.day2.entity.Ball;
-import com.galdovich.day2.entity.Basket;
-import com.galdovich.day2.entity.Color;
-import com.galdovich.day2.entity.Size;
+import com.galdovich.basketapp.entity.Ball;
+import com.galdovich.basketapp.entity.Basket;
+import com.galdovich.basketapp.entity.Color;
+import com.galdovich.basketapp.entity.Size;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

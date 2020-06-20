@@ -1,4 +1,4 @@
-package com.galdovich.day2.exception;
+package com.galdovich.basketapp.exception;
 
 public class CustomException extends Exception {
 

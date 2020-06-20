@@ -1,9 +1,9 @@
-package com.galdovich.day2.creator;
+package com.galdovich.basketapp.creator;
 
-import com.galdovich.day2.entity.Ball;
-import com.galdovich.day2.entity.Color;
-import com.galdovich.day2.entity.Size;
-import com.galdovich.day2.exception.CustomException;
+import com.galdovich.basketapp.entity.Ball;
+import com.galdovich.basketapp.entity.Color;
+import com.galdovich.basketapp.entity.Size;
+import com.galdovich.basketapp.exception.CustomException;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;

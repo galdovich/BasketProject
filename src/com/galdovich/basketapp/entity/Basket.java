@@ -1,4 +1,4 @@
-package com.galdovich.day2.entity;
+package com.galdovich.basketapp.entity;
 
 import java.util.ArrayList;
 import java.util.List;

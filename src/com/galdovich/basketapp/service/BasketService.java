@@ -1,9 +1,9 @@
-package com.galdovich.day2.service;
+package com.galdovich.basketapp.service;
 
-import com.galdovich.day2.entity.Ball;
-import com.galdovich.day2.entity.Basket;
-import com.galdovich.day2.entity.Color;
-import com.galdovich.day2.exception.CustomException;
+import com.galdovich.basketapp.entity.Ball;
+import com.galdovich.basketapp.entity.Basket;
+import com.galdovich.basketapp.entity.Color;
+import com.galdovich.basketapp.exception.CustomException;
 
 public class BasketService {
 
