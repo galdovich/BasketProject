@@ -1,4 +1,4 @@
-package test.com.galdovich.day2.service;
+package test.com.galdovich.basketapp.service;
 
 import com.galdovich.basketapp.entity.Ball;
 import com.galdovich.basketapp.entity.Basket;

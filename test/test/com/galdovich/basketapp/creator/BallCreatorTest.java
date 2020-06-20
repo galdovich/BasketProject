@@ -1,4 +1,4 @@
-package test.com.galdovich.day2.creator;
+package test.com.galdovich.basketapp.creator;
 
 import com.galdovich.basketapp.creator.BallCreator;
 import com.galdovich.basketapp.entity.Ball;
