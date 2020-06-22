@@ -1,39 +1,35 @@
 package com.galdovich.basketapp.entity;
 
 public class Ball {
-    private Color color;
-    private Size size;
+    private BallColor ballColor;
+    private BallSize ballSize;
     private double weight;
+    private static final BallColor DEFAULT_COLOR = BallColor.BLACK;
+    private static final BallSize DEFAULT_SIZE = BallSize.AVERAGE;
+    private static final int DEFAULT_WEIGHT = 2;
 
-    /** Default color is Black, default size is Average and default weight is 2*/
     public Ball() {
-        color = Color.BLACK;
-        size = Size.AVERAGE;
-        weight = 2;
+        ballColor = DEFAULT_COLOR;
+        ballSize = DEFAULT_SIZE;
+        weight = DEFAULT_WEIGHT;
     }
 
-    public Ball(Color color, Size size, double weight) {
-        this.color = color;
-        this.size = size;
+    public Ball(BallColor ballColor, BallSize ballSize, double weight) {
+        this.ballColor = ballColor;
+        this.ballSize = ballSize;
         this.weight = weight;
-    }
-
-    /** Method by a given diameter calculates the volume of the ball*/
-    public double getVolume() {
-        double volume = Math.pow(size.getDiameter(),3)*Math.PI/6;
-        return Math.round(volume);
     }
 
     public double getWeight(){
         return weight;
     }
 
-    public Size getSize() {
-        return size;
+    public BallSize getBallSize() {
+        return ballSize;
     }
 
-    public Color getColor (){
-        return color;
+    public BallColor getBallColor(){
+        return ballColor;
     }
 
     @Override
@@ -45,8 +41,8 @@ public class Ball {
             return false;
         }
         Ball ball = (Ball) o;
-        return size == ball.size &&
-                color == ball.color &&
+        return ballSize == ball.ballSize &&
+                ballColor == ball.ballColor &&
                 weight == ball.weight;
     }
 
@@ -54,8 +50,8 @@ public class Ball {
     public int hashCode() {
         int result;
         long temp;
-        result = color != null ? color.hashCode() : 0;
-        result = 31 * result + (size != null ? size.hashCode() : 0);
+        result = ballColor != null ? ballColor.hashCode() : 0;
+        result = 31 * result + (ballSize != null ? ballSize.hashCode() : 0);
         temp = Double.doubleToLongBits(weight);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
@@ -64,8 +60,9 @@ public class Ball {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Ball{");
-        sb.append("color=").append(color);
-        sb.append(", size=").append(size);
+        sb.append("ballColor=").append(ballColor);
+        sb.append(", ballSize=").append(ballSize);
+        sb.append(", weight=").append(weight);
         sb.append('}');
         return sb.toString();
     }

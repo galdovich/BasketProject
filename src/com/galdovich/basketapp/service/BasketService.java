@@ -1,19 +1,19 @@
 package com.galdovich.basketapp.service;
 
 import com.galdovich.basketapp.entity.Ball;
+import com.galdovich.basketapp.entity.BallColor;
 import com.galdovich.basketapp.entity.Basket;
-import com.galdovich.basketapp.entity.Color;
 import com.galdovich.basketapp.exception.CustomException;
 
 public class BasketService {
 
-    public int countSameColorBalls(Basket basket, Color ballColor) throws CustomException{
+    public int countSameColorBalls(Basket basket, BallColor ballColor) throws CustomException{
         int count = 0;
         if (basket == null){
             throw new CustomException("Null Exception in \"countSameColorBalls\" method");
         }else {
             for (Ball boll: basket.getBallsArray()) {
-                if (boll.getColor() == ballColor) {
+                if (boll.getBallColor() == ballColor) {
                         count++;
                 }
             }
@@ -34,12 +34,13 @@ public class BasketService {
     }
 
     public double countBasketFreeSpace (Basket basket) throws CustomException{
+        BallService ballService = new BallService();
         double usedSpace = 0;
         if (basket == null){
             throw new CustomException("Null Exception in \"countBasketFreeSpace\" method");}
         else {
             for (Ball ball: basket.getBallsArray()){
-                usedSpace += ball.getVolume();
+                usedSpace += ballService.countBallVolume(ball);
             }
         }
         return Math.round(basket.getSpaceCapacity() - usedSpace);

@@ -1,6 +1,6 @@
 package com.galdovich.basketapp.entity;
 
-public enum Color {
+public enum BallColor {
     BLUE("Blue"),
     RED("Red"),
     WHITE("White"),
@@ -12,7 +12,7 @@ public enum Color {
 
     private final String colorName;
 
-    Color(String colorName) {
+    BallColor(String colorName) {
         this.colorName = colorName;
     }
 

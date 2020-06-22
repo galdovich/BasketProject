@@ -23,3 +23,9 @@ f
 6src/com/galdovich/basketapp/creator/BasketCreator.java,d\2\d232bedd014cc9164dc3d707fae5dbe1d6c58cdf
 d
 4src/com/galdovich/basketapp/creator/BallCreator.java,7\0\704af9f688cb348d7c7bd87bd1fe5b4c07f15d84
+P
+ .idea/libraries/testng_7_1_0.xml,a\7\a7894cbc67453f857295316147713106b81209e3
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+A
+BasketProject.iml,7\3\7307f473c05f9b0968205005387faecb396572ff

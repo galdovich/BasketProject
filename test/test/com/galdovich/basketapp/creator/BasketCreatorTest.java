@@ -2,9 +2,9 @@ package test.com.galdovich.basketapp.creator;
 
 import com.galdovich.basketapp.creator.BasketCreator;
 import com.galdovich.basketapp.entity.Ball;
+import com.galdovich.basketapp.entity.BallSize;
 import com.galdovich.basketapp.entity.Basket;
-import com.galdovich.basketapp.entity.Color;
-import com.galdovich.basketapp.entity.Size;
+import com.galdovich.basketapp.entity.BallColor;
 import com.galdovich.basketapp.exception.CustomException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -28,9 +28,9 @@ public class BasketCreatorTest {
         Basket basket1 = new Basket(20000);
         Basket basket2 = new Basket(19000);
         Basket basket3 = new Basket(15000);
-        Ball ball1 = new Ball(Color.BLACK, Size.BIG, 5.4);
-        Ball ball2 = new Ball(Color.GREEN, Size.AVERAGE, 4.1);
-        Ball ball3 = new Ball(Color.PURPLE, Size.SMALL, 1.0);
+        Ball ball1 = new Ball(BallColor.BLACK, BallSize.BIG, 5.4);
+        Ball ball2 = new Ball(BallColor.GREEN, BallSize.AVERAGE, 4.1);
+        Ball ball3 = new Ball(BallColor.PURPLE, BallSize.SMALL, 1.0);
         basket1.addBall(ball1);
         basket2.addBall(ball2);
         basket3.addBall(ball3);
@@ -59,9 +59,9 @@ public class BasketCreatorTest {
             expectedExceptionsMessageRegExp = "BallList volume more than Basket spaceCapacity>")
     public void testCreateBasketException() throws CustomException {
         List<Ball> ballList = new ArrayList<>(){};
-        ballList.add(new Ball(Color.BLACK, Size.BIG, 4));
-        ballList.add(new Ball(Color.GREEN, Size.BIG, 2));
-        ballList.add(new Ball(Color.PURPLE, Size.BIG, 5));
+        ballList.add(new Ball(BallColor.BLACK, BallSize.BIG, 4));
+        ballList.add(new Ball(BallColor.GREEN, BallSize.BIG, 2));
+        ballList.add(new Ball(BallColor.PURPLE, BallSize.BIG, 5));
         basketCreator.createBasket(ballList, 11000);
     }
 }

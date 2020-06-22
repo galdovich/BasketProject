@@ -1,9 +1,9 @@
 package test.com.galdovich.basketapp.entity;
 
 import com.galdovich.basketapp.entity.Ball;
+import com.galdovich.basketapp.entity.BallColor;
+import com.galdovich.basketapp.entity.BallSize;
 import com.galdovich.basketapp.entity.Basket;
-import com.galdovich.basketapp.entity.Color;
-import com.galdovich.basketapp.entity.Size;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -15,16 +15,16 @@ public class BasketTest {
     public Object[][] dataForTestAddBall() {
         Basket emptyBasket = new Basket( );
         Basket fullBasket = new Basket();
-        Ball ball = new Ball(Color.RED, Size.BIG, 3.9);
-        Ball bal2 = new Ball(Color.GREEN, Size.BIG, 4.1);
+        Ball ball = new Ball(BallColor.RED, BallSize.BIG, 3.9);
+        Ball bal2 = new Ball(BallColor.GREEN, BallSize.BIG, 4.1);
         fullBasket.addBall(ball);
         fullBasket.addBall(bal2);
         return new Object[][]{
-                {new Ball(Color.BLACK, Size.BIG, 4.1),
+                {new Ball(BallColor.BLACK, BallSize.BIG, 4.1),
                         fullBasket, false},
-                {new Ball(Color.GREEN, Size.AVERAGE, 1.3),
+                {new Ball(BallColor.GREEN, BallSize.AVERAGE, 1.3),
                         emptyBasket, true},
-                {new Ball(Color.PURPLE, Size.AVERAGE, 2.2),
+                {new Ball(BallColor.PURPLE, BallSize.AVERAGE, 2.2),
                         fullBasket, false}
         };
     }
@@ -39,9 +39,9 @@ public class BasketTest {
     @DataProvider(name = "dataForRemoveBallTest")
     public Object[][] dataForRemoveTest() {
         Basket basket = new Basket();
-        Ball ball = new Ball(Color.RED, Size.BIG, 3.9);
-        Ball bal2 = new Ball(Color.GREEN, Size.BIG, 4.1);
-        Ball bal3 = new Ball(Color.PURPLE, Size.SMALL, 1.1);
+        Ball ball = new Ball(BallColor.RED, BallSize.BIG, 3.9);
+        Ball bal2 = new Ball(BallColor.GREEN, BallSize.BIG, 4.1);
+        Ball bal3 = new Ball(BallColor.PURPLE, BallSize.SMALL, 1.1);
         basket.addBall(ball);
         basket.addBall(bal2);
         return new Object[][]{
@@ -61,9 +61,9 @@ public class BasketTest {
     @DataProvider(name = "dataForGetBallTest")
     public Object[][] dataForGetBallTest() {
         Basket basket = new Basket(25000);
-        Ball ball1 = new Ball(Color.RED, Size.SMALL, 2.1);
-        Ball ball2 = new Ball(Color.GREEN, Size.AVERAGE, 3.1);
-        Ball ball3 = new Ball(Color.PURPLE, Size.SMALL, 1.1);
+        Ball ball1 = new Ball(BallColor.RED, BallSize.SMALL, 2.1);
+        Ball ball2 = new Ball(BallColor.GREEN, BallSize.AVERAGE, 3.1);
+        Ball ball3 = new Ball(BallColor.PURPLE, BallSize.SMALL, 1.1);
         basket.addBall(ball1);
         basket.addBall(ball2);
         basket.addBall(ball3);

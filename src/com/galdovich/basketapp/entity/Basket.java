@@ -1,20 +1,23 @@
 package com.galdovich.basketapp.entity;
 
+import com.galdovich.basketapp.service.BallService;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Basket {
-    private final double spaceCapacity;
-    private final List<Ball> ballsArray;
-
-    /** Default volumeCapacity equals 10000 cubic centimeters.
-     * Can put 2 BIG size balls or 5 AVERAGE size balls or 19 SMALL size balls. */
-    public Basket() {
-        this.ballsArray = new ArrayList<>();
-        this.spaceCapacity = 10000;
-    }
 
     /** SpaceCapacity measured in cubic centimeters */
+    private final double spaceCapacity;
+    private final List<Ball> ballsArray;
+    private static final int DEFAULT_CAPACITY = 10000;
+
+    /** Can put 2 BIG size balls or 5 AVERAGE size balls or 19 SMALL size balls. */
+    public Basket() {
+        this.ballsArray = new ArrayList<>();
+        this.spaceCapacity = DEFAULT_CAPACITY;
+    }
+
     public Basket(int spaceCapacity) {
         this.ballsArray = new ArrayList<>();
         this.spaceCapacity = spaceCapacity;
@@ -36,14 +39,16 @@ public class Basket {
 
     /** Return false if adding Ball volume more than basket free space */
     private boolean possibleToAdd(Ball newBall){
+        BallService ballService = new BallService();
+        double newBallVolume = ballService.countBallVolume(newBall);
         double usedSpace = 0;
         for (Ball ball: ballsArray){
-            usedSpace += ball.getVolume();
+            usedSpace += ballService.countBallVolume(ball);
         }
         if (newBall == null){
             return false;
         }
-        return newBall.getVolume() + usedSpace <= spaceCapacity;
+        return newBallVolume + usedSpace <= spaceCapacity;
     }
 
     public boolean removeBall(Ball removableBall) {
@@ -71,7 +76,7 @@ public class Basket {
         return spaceCapacity;
     }
 
-    /** Method compares baskets by capacity */
+    /** Method compares baskets by capacity only */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

@@ -3,6 +3,7 @@ package com.galdovich.basketapp.creator;
 import com.galdovich.basketapp.entity.Ball;
 import com.galdovich.basketapp.entity.Basket;
 import com.galdovich.basketapp.exception.CustomException;
+import com.galdovich.basketapp.service.BallService;
 
 import java.util.List;
 
@@ -21,12 +22,13 @@ public class BasketCreator {
     }
 
     private boolean checkAvailableVolume(Basket basket, List<Ball> ballList){
+        BallService ballService = new BallService();
         if (basket == null){
             return false;
         }
         double volume = 0;
         for (Ball ball: ballList){
-            volume += ball.getVolume();
+            volume += ballService.countBallVolume(ball);
         }
         return volume <= basket.getSpaceCapacity();
     }
